@@ -1,9 +1,111 @@
 
-.div{
-    width: 10rem;
-    height: 10rem;
-    border-top: 1px solid #000;
-    background: rgb(226, 31, 31);
-    margin: 0 auto;
+:root{
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
 
+// --------------------------------------------------------------------moxin
+@mixin text($fontWeight,$fontStyle,$fontSize,$lineHeight,){
+    font-weight: $fontWeight;
+    font-style: $fontStyle;
+    font-size: $fontSize +rem;
+    line-height: $lineHeight +rem;
+}
+@mixin position($paddingT,$paddingR,$paddingB,$paddingL){
+    padding-top: $paddingT;
+    padding-right: $paddingR;
+    padding-bottom: $paddingB;
+    padding-left: $paddingL;
+    margin: 0 auto;
+}
+@mixin border-test($color){
+    border:1px solid $color;
+}
+@mixin hoverActive($time,$color-hover,$color-active, $color-background) {
+    transition: $time + s;
+    &:hover{
+        color: $color-hover;
+        background: $color-background;
+    }
+    &:active{
+        color: $color-active;
+        background: $color-background;
+    }
+}
+body>*{
+    padding: 0px;
+    margin: 0;
+    @include border-test(black);
+}
+// -----------------------------------------------------------------------const
+$title-color : rgba(51, 51, 51, 1);
+$text-color: rgba(74, 74, 74, 1);
+$text-light-color: rgba(245, 245, 245, 1);
+$text-decoration-color: linear-gradient(180deg, #FFA96B -21.43%, #EE7A28 100%);
+$text-accent-color:rgba(233, 117, 34, 1);
+
+// --------------------------------------------------
+// ----header
+.header {
+    @include position(2.2rem , 8rem , 2.2rem , 8rem);
+    position: relative;
+    width: 144rem;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items:  center;
+    &__logo{
+        position: relative;
+    };
+    &__nav{
+        position: relative;
+    };
+    &__contacts{
+        position: relative;
+    };
+    &__burger{
+    }
+}
+.logo{
+    height: 10%;
+}
+.logo__image {
+    position: relative;
+    top:0;
+    object-fit: cover;
+}
+.header-nav__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.header-nav__item {
+}
+.header-nav__link {
+}
+.contacts {
+}
+.contacts__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.contacts__item-btn {
+}
+.contacts__link-btn {
+}
+.contacts__item-number {
+}
+.contacts__link-number {
+}
+.header__burger {
+}
+.burger{
+    font-size: 5rem;
+    color: $text-accent-color;
+}
+.header__burger--hide{
 }
