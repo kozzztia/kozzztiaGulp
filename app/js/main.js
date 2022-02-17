@@ -1,6 +1,12 @@
 
-// addEventListener('resize', () => {
-//     document.querySelector('.size').innerHTML = window.innerWidth + 'px' + ':' + window.innerHeight + 'px';
+const headerCall = document.querySelector('.header__call');
+const navHeader = document.querySelector('.nav');
+const burger = document.querySelector('.burger');
 
-// })
+
+// ---------------------------header
+
+burger.onclick = () => {
+    navHeader.classList.toggle('nav--active')
+}
 
