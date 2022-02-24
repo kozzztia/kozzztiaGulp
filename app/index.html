@@ -6,52 +6,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="swiper/swiper.min.css">
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>ziga</title>
+    <title>photo studio</title>
 </head>
 
 <body>
-    <section class="page">
+    <section class="page" aria-label="page">
         <header class="header">
-            <div class="header__logo">
-                <picture class="logo">
-                    <source srcset="images/logoMin.svg" media="(max-width: 460px)">
-                    <source srcset="images/logoMedium.svg" media="(max-width: 1024px)">
-                    <img src="images/logoMax.svg" class="logo__item" alt="logo">
+            <div class="header__logo logo">
+                <picture>
+                    <source media="(max-width:450px)" srcset="images/logoMin.svg" alt="min">
+                    <source media="(max-width:1024px)" srcset="images/logoMedium.svg" alt="medium">
+                    <source media="(max-width:1440px)" srcset="images/logoMax.svg" alt="max">
+                    <img src="images/logoMax.svg" alt="max">
                 </picture>
             </div>
-            <div class="header__nav">
-                <ul class="nav">
-                    <li class="nav__item"><a href="#portfolio" class="nav__link">Портфолио</a></li>
-                    <li class="nav__item"><a href="#example" class="nav__link">Виды работ</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">О фотостудии</a></li>
-                    <li class="nav__item"><a href="#price" class="nav__link">Услуги и цены</a></li>
-                    <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+            <div class="header__nav nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a aria-label="portfolio" href="" class="nav__link">Портфолио</a></li>
+                    <li class="nav__item"><a aria-label="works" href="" class="nav__link">Виды работ</a></li>
+                    <li class="nav__item"><a aria-label="photo Studio" href="" class="nav__link">О фотостудии</a></li>
+                    <li class="nav__item"><a aria-label="cost" href="" class="nav__link">Услуги и цены</a></li>
+                    <li class="nav__item"><a aria-label="contacts" href="" class="nav__link">Контакты</a></li>
                 </ul>
             </div>
-            <div class="header__contacts">
-                <button class="header__call">ОБРАТНЫЙ ЗВОНОК</button>
-                <a class="header__phone" href="tel:80969444890"></a>
-                <a class="header__tell-link" href="tel:80969444890">8(096) 94 44 890</a>
+            <div class="header__call call">
+                <button class="call__btn">ОБРАТНЫЙ ЗВОНОК</button>
+                <a href="tel:0969444890" class="call__number">(096)9444890</a>
+                <button class="call__phone"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21.6775 16.6617C20.345 16.6617 19.0558 16.445 17.8533 16.055C17.4742 15.925 17.0517 16.0225 16.7592 16.315L15.0583 18.4492C11.9925 16.9867 9.12167 14.2242 7.59417 11.05L9.70667 9.25167C9.99917 8.94833 10.0858 8.52583 9.96667 8.14667C9.56583 6.94417 9.36 5.655 9.36 4.3225C9.36 3.7375 8.8725 3.25 8.2875 3.25H4.53917C3.95417 3.25 3.25 3.51 3.25 4.3225C3.25 14.3867 11.6242 22.75 21.6775 22.75C22.4467 22.75 22.75 22.0675 22.75 21.4717V17.7342C22.75 17.1492 22.2625 16.6617 21.6775 16.6617Z"
+                            fill="#4A4A4A" />
+                    </svg></button>
+
             </div>
-            <div class="header__burger">
-                <button class="burger">&#9776</button>
-            </div>
+            <button class="burger"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4.32617 6.5C3.49774 6.5 2.82617 7.17157 2.82617 8C2.82617 8.82843 3.49774 9.5 4.32617 9.5V6.5ZM28.0463 9.5C28.8747 9.5 29.5463 8.82843 29.5463 8C29.5463 7.17157 28.8747 6.5 28.0463 6.5V9.5ZM4.32617 9.5H28.0463V6.5H4.32617V9.5Z"
+                        fill="#E97522" />
+                    <path
+                        d="M4.32617 14.5C3.49774 14.5 2.82617 15.1716 2.82617 16C2.82617 16.8284 3.49774 17.5 4.32617 17.5V14.5ZM28.0463 17.5C28.8747 17.5 29.5463 16.8284 29.5463 16C29.5463 15.1716 28.8747 14.5 28.0463 14.5V17.5ZM4.32617 17.5H28.0463V14.5H4.32617V17.5Z"
+                        fill="#E97522" />
+                    <path
+                        d="M4.32617 22.5C3.49774 22.5 2.82617 23.1716 2.82617 24C2.82617 24.8284 3.49774 25.5 4.32617 25.5V22.5ZM28.0463 25.5C28.8747 25.5 29.5463 24.8284 29.5463 24C29.5463 23.1716 28.8747 22.5 28.0463 22.5V25.5ZM4.32617 25.5H28.0463V22.5H4.32617V25.5Z"
+                        fill="#E97522" />
+                </svg>
+            </button>
         </header>
         <section class="baner">
             <div class="baner__video">
-                <video class="video" poster="https://i.gifer.com/7plQ.gif" autoplay="true" muted="true" loop="true">
-                    <source src="images/videoMin.webm" type="video/webm">
-                    <source src="images/video.mp4" type="video/mp4">
+                <video class="video" poster="video/load.gif" autoplay="true" muted="false" loop="true" controls="false">
+                    <!-- <source src="video/videoMin.webm" type="video/webm"> -->
+                    <source src="video/video.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="baner__video-mask"></div>
+            <div class="baner__mask"></div>
             <article class="baner__article">
-                <h1 class="baner__title">Профессиональная <mark>фотосессия в студии</mark></h1>
-                <h5 class="baner__subtitle">Наша фотостудия позволит<br> исполнить ваши мечты</h5>
+                <h1 class="baner__title">Профессиональная <br><mark>фотосессия в студии</mark></h1>
+                <h5 class="baner__subtitle">Наша фотостудия позволит исполнить ваши мечты</h5>
                 <p class="baner__text">Фотографии стали неотъемлемой частью нашей жизни. Это теперь не просто памятные
                     снимки в альбомах, ныне фото становиться способом понравиться окружающим, получить восхищение,
                     заявить о себе всему миру.
@@ -61,109 +79,61 @@
                 <button class="baner__btn">Получить консультацию</button>
             </article>
         </section>
-        <section class="popup">
-            <div class="popup__wrapper">
-                <div class="popup__image">
-                    <picture>
-                        <source srcset="images/formImage.webp" type="image/webp">
-                        <source srcset="images/formImage.jpg" type="image/jpeg">
-                        <img src="images/formImage.jpg" alt="form">
+        <section class="swiper-container first-slider">
+            <ul class="swiper-wrapper first-wrapper">
+                <li class="swiper-slide first-slide">
+                    <picture class="slide-item first-item">
+                        <source srcset="images/slide1.webp" type="image/webp">
+                        <img src="images/slide1.png" alt="first">
                     </picture>
-                </div>
-                <div class="popup__form">
-                    <!-- action="#" method="post" -->
-                    <form>
-                        <h2 class="popup__title">Форма обратной связи</h2>
-                        <p>Имя</p>
-                        <input type="text" class="form__name" placeholder="Введите ваше имя">
-                        <p>E-mail</p>
-                        <input type="email" class="form__email" placeholder="Введите ваш E-mail">
-                        <p>Телефон</p>
-                        <input type="number" class="form__phoneNumber" placeholder="Введите ваше Телефон"><br>
-                        <button class="form__btn" type="submit">Отправить</button>
-                        <p class="license">Нажимая кнопку «Отправить», вы даете согласие на обработку<br> персональных
-                            данных и соглашаетесь с<a href="#">политикой конфиденциальности</a> </p>
-                    </form>
-                </div>
+                </li>
+                <li class="swiper-slide first-slide">
+                    <picture class="slide-item first-item">
+                        <source srcset="images/slide2.webp" type="image/webp">
+                        <img src="images/slide2.png" alt="second">
+                    </picture>
+                </li>
+                <li class="swiper-slide first-slide">
+                    <picture class="slide-item first-item">
+                        <source srcset="images/slide3.webp" type="image/webp">
+                        <img src="images/slide3.png" alt="third">
+                    </picture>
+                </li>
+                <li class="swiper-slide first-slide">
+                    <picture class="slide-item first-item">
+                        <source srcset="images/slide1.webp" type="image/webp">
+                        <img src="images/slide1.png" alt="fourse">
+                    </picture>
+                </li>
+                <li class="swiper-slide first-slide">
+                    <picture class="slide-item first-item">
+                        <source srcset="images/slide2.webp" type="image/webp">
+                        <img src="images/slide2.png" alt="fifth">
+                    </picture>
+                </li>
+                <li class="swiper-slide first-slide">
+                    <picture class="slide-item first-item">
+                        <source srcset="images/slide3.webp" type="image/webp">
+                        <img src="images/slide3.png" alt="sixth">
+                    </picture>
+                </li>
+            </ul>
+            <div class="first-btns">
+                <button class="swiper-button-prev first-button-prev">
+                </button>
+                <button class="swiper-button-next first-button-next"></button>
             </div>
-        </section>
-        <section class="portfolio">
-            <div class="portfolio__title-wrapper">
-                <h2 class="portfolio__title">Наши работы</h2>
-            </div>
-            <div class="portfolio__slider">
 
-                <picture>
-                    <source srcset="images/slide1.webp" type="image/webp">
-                    <source srcset="images/slide1.png" type="image/png">
-                    <img class="portfolio__image" src="images/slide1.png" alt="slide">
-                </picture>
+            <div class="swiper-pagination first-pagination"></div>
+
+            <div class="swiper-scrollbar"></div>
 
 
-                <picture>
-                    <source srcset="images/slide2.webp" type="image/webp">
-                    <source srcset="images/slide2.png" type="image/png">
-                    <img class="portfolio__image" src="images/slide2.png" alt="slide">
-                </picture>
-
-
-                <picture>
-                    <source srcset="images/slide3.webp" type="image/webp">
-                    <source srcset="images/slide3.png" type="image/png">
-                    <img class="portfolio__image" src="images/slide3.png" alt="slide">
-                </picture>
-
-
-                <picture>
-                    <source srcset="images/slide1.webp" type="image/webp">
-                    <source srcset="images/slide1.png" type="image/png">
-                    <img class="portfolio__image" src="images/slide1.png" alt="slide">
-                </picture>
-
-
-                <picture>
-                    <source srcset="images/slide2.webp" type="image/webp">
-                    <source srcset="images/slide2.png" type="image/png">
-                    <img class="portfolio__image" src="images/slide2.png" alt="slide">
-                </picture>
-
-
-                <picture>
-                    <source srcset="images/slide3.webp" type="image/webp">
-                    <source srcset="images/slide3.png" type="image/png">
-                    <img class="portfolio__image" src="images/slide3.png" alt="slide">
-                </picture>
-
-
-                <picture>
-                    <source srcset="images/slide1.webp" type="image/webp">
-                    <source srcset="images/slide1.png" type="image/png">
-                    <img class="portfolio__image" src="images/slide1.png" alt="slide">
-                </picture>
-
-
-                <picture>
-                    <source srcset="images/slide2.webp" type="image/webp">
-                    <source srcset="images/slide2.png" type="image/png">
-                    <img class="portfolio__image" src="images/slide2.png" alt="slide">
-                </picture>
-
-
-                <picture>
-                    <source srcset="images/slide3.webp" type="image/webp">
-                    <source srcset="images/slide3.png" type="image/png">
-                    <img class="portfolio__image" src="images/slide3.png" alt="slide">
-                </picture>
-
-            </div>
-            <div class="portfolio__btns">
-                <button class="portfolio__btn portfolio__btn--prev"></button>
-                <button class="portfolio__btn portfolio__btn--next"></button>
-            </div>
         </section>
     </section>
-
+    <script src="swiper/swiper.min.js"></script>
     <script src="js/main.min.js"></script>
+
 </body>
 
 </html>

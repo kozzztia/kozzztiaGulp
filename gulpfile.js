@@ -41,7 +41,7 @@ function imageMin() {
                 ]
             })
         ]))
-        .pipe(dest('dist/project/images'))
+        .pipe(dest('dist/images'))
 }
 
 function browsersync() {
@@ -83,11 +83,10 @@ function watching() {
 function build() {
     return src([
         'app/css/style.min.css',
-        'app/fonts/**/*',
         'app/js/main.min.js',
         'app/*.html',
     ], { base: 'app' })
-        .pipe(dest('dist/project'))
+        .pipe(dest('dist'))
 }
 
 exports.webpHtml = webpHtml;
@@ -99,4 +98,4 @@ exports.imageMin = imageMin;
 exports.cleanDist = cleanDist;
 exports.webP = webP;
 exports.build = series(cleanDist, imageMin, build);
-exports.default = parallel(webP, webpHtml, styles, scripts, browsersync, watching)
+exports.default = parallel(webP, styles, scripts, browsersync, watching)
