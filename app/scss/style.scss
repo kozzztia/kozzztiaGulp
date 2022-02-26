@@ -54,6 +54,7 @@ $text-title-color: rgba(51, 51, 51, 1);
     overflow: hidden;
     position: relative;
     width: 100%;
+    background: $bg-color;
     }
 }
 // ------------------------------------------header
@@ -135,7 +136,7 @@ $text-title-color: rgba(51, 51, 51, 1);
 // --------------------------------------baner
 .baner {
     width: 100%;
-    min-height: 94rem;
+    min-height: 70rem;
     position: relative;
     
 }
@@ -194,74 +195,96 @@ $text-title-color: rgba(51, 51, 51, 1);
     border-radius: 10px;
     background: $bg-accent-color;
 }
-// -------------------------------------------swiper
-
-.first-slider {
-    position: relative;
-    background: gray;
+// -------------------------------------------slider
+.firstSlider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.first-wrapper {
-    display: block;
-    position: relative;
+.firstSlider__title {
+    text-align: center;
+    margin-top: 12rem;
+    margin-bottom: 8rem;
 }
-.first-slide {
-    display: block;
-    position: relative;
-    // display: flex;
-    // justify-content: center;
+.title {
+    @include text(600,normal,3.6,4.3,$text-title-color);
 }
-.first-item {
-    display: block;
-    position: relative;
-    // width: 55rem;
-    // height: 62rem;
-    img{
-        position: relative;
-        inset:0;
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-        object-position: center;
-    }
+.firstSlider__slider {
 }
-.first-slider .first-button-prev,.first-slider .first-button-next{
-        border: none;
-        background: #fff;
-        border-radius: 50%;
-        width: 7rem ;
-        height: 7rem ;
-        padding: .5rem;
-        transition: .2s;
-        &:hover{
-            background: $bg-decoration-color;
-            &::after{
-                color: $text-light-color;
-            }
-        }
+.firstSlider__list {
+    min-height: 64rem;
+}
+.firstSlider__item {
+    position: absolute;
+    width: 47.5rem;
+    height: 54.5rem;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -40%);
+    opacity: 0;
+    transition: .5s;
  
-    }
-
-.first-button-prev::after, .first-button-next::after {
-    color: $text-decoration-color;
-
 }
-.first-slider.first-pagination {
-    bottom:0;
+.firstSlider__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
 }
-.first-pagination>.swiper-pagination-bullet{
-    width:2rem;
-    height: 2rem;
-    line-height: 2rem;
-    font-size: 1.4rem;
-    background: $text-light-color;
-    &:hover, &:active{
-        background: $bg-accent-color;
-    }
+.firstSlider__item--prev{
+    top:50%;
+    left:0;
+    transform:translate(0, -38%);
+    z-index: 90;
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(0, 0, 0,1);
+  
+}
+.firstSlider__item--active{
+    z-index: 100;
+    width: 55.6rem;
+    height: 61.8rem;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -40%);
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(0, 0, 0,1);
+    // -------------------------------!!!!!!!!!!!!!
+}
+.firstSlider__item--next{
+    top: 50%;
+    left:100%;
+    transform:translate(-100%, -38%);
+    z-index: 90;
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(0, 0, 0,1);
 }
 
+.firstSlider__bullets {
+}
+.firstSlider__buttons {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.firstSlider__btn {
+    border: none;
+    background: inherit;
+    position: relative;
+    z-index: 95;
+}
+.firstSlider__btn--prev {
+    
+}
+.firstSlider__btn--next {
+   
+}
 
-
-
+// ------------------------------------------
 @media screen and (max-width: 1440px) {
     .page{
             width: 100%;

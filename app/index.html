@@ -79,60 +79,106 @@
                 <button class="baner__btn">Получить консультацию</button>
             </article>
         </section>
-        <section class="swiper-container first-slider">
-            <ul class="swiper-wrapper first-wrapper">
-                <li class="swiper-slide first-slide">
-                    <picture class="slide-item first-item">
-                        <source srcset="images/slide1.webp" type="image/webp">
-                        <img src="images/slide1.png" alt="first">
-                    </picture>
-                </li>
-                <li class="swiper-slide first-slide">
-                    <picture class="slide-item first-item">
-                        <source srcset="images/slide2.webp" type="image/webp">
-                        <img src="images/slide2.png" alt="second">
-                    </picture>
-                </li>
-                <li class="swiper-slide first-slide">
-                    <picture class="slide-item first-item">
-                        <source srcset="images/slide3.webp" type="image/webp">
-                        <img src="images/slide3.png" alt="third">
-                    </picture>
-                </li>
-                <li class="swiper-slide first-slide">
-                    <picture class="slide-item first-item">
-                        <source srcset="images/slide1.webp" type="image/webp">
-                        <img src="images/slide1.png" alt="fourse">
-                    </picture>
-                </li>
-                <li class="swiper-slide first-slide">
-                    <picture class="slide-item first-item">
-                        <source srcset="images/slide2.webp" type="image/webp">
-                        <img src="images/slide2.png" alt="fifth">
-                    </picture>
-                </li>
-                <li class="swiper-slide first-slide">
-                    <picture class="slide-item first-item">
-                        <source srcset="images/slide3.webp" type="image/webp">
-                        <img src="images/slide3.png" alt="sixth">
-                    </picture>
-                </li>
-            </ul>
-            <div class="first-btns">
-                <button class="swiper-button-prev first-button-prev">
+        <section class="firstSlider">
+            <div class="firstSlider__title">
+                <h1 class="title">Наши работы</h1>
+            </div>
+            <div class="firstSlider__slider">
+                <ul class="firstSlider__list">
+                    <li class="firstSlider__item firstSlider__item--prev">
+                        <picture>
+                            <source srcset="images/slide1.webp" type="image/webp">
+                            <img class="firstSlider__image" src="images/slide1.png" alt="image1">
+                        </picture>
+                    </li>
+                    <li class="firstSlider__item firstSlider__item--active">
+                        <picture>
+                            <source srcset="images/slide2.webp" type="image/webp">
+                            <img class="firstSlider__image" src="images/slide2.png" alt="image2">
+                        </picture>
+                    </li>
+                    <li class="firstSlider__item firstSlider__item--next">
+                        <picture>
+                            <source srcset="images/slide3.webp" type="image/webp">
+                            <img class="firstSlider__image" src="images/slide3.png" alt="image3">
+                        </picture>
+                    </li>
+                    <li class="firstSlider__item">
+                        <picture>
+                            <source srcset="images/slide4.webp" type="image/webp">
+                            <img class="firstSlider__image" src="images/slide4.png" alt="image4">
+                        </picture>
+                    </li>
+                    <li class="firstSlider__item">
+                        <picture>
+                            <source srcset="images/slide5.webp" type="image/webp">
+                            <img class="firstSlider__image" src="images/slide5.png" alt="image5">
+                        </picture>
+                    </li>
+                    <li class="firstSlider__item">
+                        <picture>
+                            <source srcset="images/slide6.webp" type="image/webp">
+                            <img class="firstSlider__image" src="images/slide6.png" alt="image6">
+                        </picture>
+                    </li>
+                </ul>
+            </div>
+            <div class="firstSlider__buttons">
+                <button class="firstSlider__btn firstSlider__btn--prev">
+                    <svg width="93" height="93" viewBox="0 0 93 93" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_106_454)">
+                            <circle cx="46.5" cy="44.5" r="36.5" transform="rotate(-180 46.5 44.5)" fill="white" />
+                            <path
+                                d="M53.4224 65.5L34.5858 46.6651C33.8047 45.8841 33.8047 44.6177 34.5858 43.8366L53.4224 25"
+                                stroke="#E97522" stroke-width="4" stroke-linecap="round" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_106_454" x="0" y="0" width="93" height="93"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="2" />
+                                <feGaussianBlur stdDeviation="5" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_106_454" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_106_454"
+                                    result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
                 </button>
-                <button class="swiper-button-next first-button-next"></button>
+                <button class="firstSlider__btn firstSlider__btn--next">
+                    <svg width="93" height="93" viewBox="0 0 93 93" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_106_450)">
+                            <circle cx="46.5" cy="44.5" r="36.5" fill="white" />
+                            <path
+                                d="M39.5776 23.5L58.4142 42.3349C59.1953 43.1159 59.1953 44.3823 58.4142 45.1634L39.5776 64"
+                                stroke="#E97522" stroke-width="4" stroke-linecap="round" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_106_450" x="0" y="0" width="93" height="93"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="2" />
+                                <feGaussianBlur stdDeviation="5" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_106_450" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_106_450"
+                                    result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </button>
             </div>
 
-            <div class="swiper-pagination first-pagination"></div>
-
-            <div class="swiper-scrollbar"></div>
-
-
         </section>
-    </section>
-    <script src="swiper/swiper.min.js"></script>
-    <script src="js/main.min.js"></script>
+        <script src="swiper/swiper.min.js"></script>
+        <script src="js/main.min.js"></script>
 
 </body>
 
