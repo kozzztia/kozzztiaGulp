@@ -12,52 +12,53 @@ const firstNext = document.querySelector('.firstSlider__btn--next');
 
 
 
-function sliderMove(item, prev, next, prevClass, nextClass, activeClass) {
-    let left = 0;
-    let right = 2;
-    let active = 1;
-    function deletClass() {
+function sliderMoveNext(item, prev, next) {
+    function delClass() {
         for (i = 0; i < item.length; i++) {
-            item[i].classList.remove(prevClass);
-            item[i].classList.remove(nextClass);
-            item[i].classList.remove(activeClass);
+            item[i].classList.remove('firstSlider__item--prev')
+            item[i].classList.remove('firstSlider__item--active')
+            item[i].classList.remove('firstSlider__item--next')
         }
     }
-    next.onclick = function () {
-        left++;
-        right++;
-        active++;
-        deletClass()
-        item[left].classList.add('firstSlider__item--prev');
-        item[right].classList.add('firstSlider__item--next');
-        item[active].classList.add('firstSlider__item--active');
-        console.log(active)
-        if (left === item.length - 1) {
-            left = -1;
-        } else if (right === item.length - 1) {
-            right = -1;
-        } else if (active === item.length - 1) {
-            active = -1;
+    let nextStep = 0;
+    let activeStep = 1;
+    let prevStep = 2;
+    next.onclick = () => {
+        prevStep++;
+        activeStep++;
+        nextStep++;
+        if (prevStep === item.length) {
+            prevStep = 0;
+        } else if (activeStep === item.length) {
+            activeStep = 0;
+        } else if (nextStep === item.length) {
+            nextStep = 0;
         }
+        console.log(prevStep, activeStep, nextStep)
+        delClass();
+        item[prevStep].classList.add('firstSlider__item--next')
+        item[activeStep].classList.add('firstSlider__item--active')
+        item[nextStep].classList.add('firstSlider__item--prev')
     }
-    prev.onclick = function () {
-        if (left <= 0) {
-            left = item.length;
-        } else if (right === 0) {
-            right = item.length;
-        } else if (active === 0) {
-            active = item.length;
+    prev.onclick = () => {
+        delClass();
+        prevStep--;
+        activeStep--;
+        nextStep--;
+        if (prevStep === -1) {
+            prevStep = item.length - 1;
+        } else if (activeStep === -1) {
+            activeStep = item.length - 1;
+        } else if (nextStep === -1) {
+            nextStep = item.length - 1;
         }
-        left--;
-        right--;
-        active--;
-        deletClass()
-        item[left].classList.add('firstSlider__item--prev');
-        item[right].classList.add('firstSlider__item--next');
-        item[active].classList.add('firstSlider__item--active');
-        console.log(active)
+        console.log(prevStep, activeStep, nextStep)
+        delClass();
+        item[prevStep].classList.add('firstSlider__item--next')
+        item[activeStep].classList.add('firstSlider__item--active')
+        item[nextStep].classList.add('firstSlider__item--prev')
     }
 
 
 }
-sliderMove(firstItems, firstPrev, firstNext, 'firstSlider__item--prev', 'firstSlider__item--next', 'firstSlider__item--active') 
+sliderMoveNext(firstItems, firstPrev, firstNext) 
