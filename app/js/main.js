@@ -1,64 +1,106 @@
+// const form = document.getElementById('form');
+// function checkedFormValue(event) {
+//     event.preventDefault();
+//     const name = form.querySelector('[name = "name"]')
+//     const age = form.querySelector('[name = "age"]')
+//     const people = form.querySelector('[name = "people"]')
+//     const plan = form.querySelector('[name = "plan"]')
+//     const values = {
+//         name: name.value,
+//         age: age.value,
+//         people: people.checked,
+//         plan: plan.value,
 
+//     }
+//     console.log(values)
+// }
+// form.addEventListener('submit', checkedFormValue)
 
+// ---------------------------------------------
 
-// ---------------------------header
+// const form = document.getElementById('form');
+// const ifCheckOrRadio = type => ['checkbox' , 'radio'].includes(type)
+// function sendFormValue(event) {
+//     event.preventDefault();
+//     const fields = document.querySelectorAll('input , select, textarea');
+//     const values ={}
+//     fields.forEach((field) =>{
+//         const {name, value , type , checked} = field;
+//         values[name] = ifCheckOrRadio(type) ? checked :value;
+//     })
+//     console.log(values)
+// }
 
+// form.addEventListener('submit', sendFormValue);
 
+// ------------------------------------
+// const {form} = document.forms;
 
-// firstSlider
-const firstItems = document.querySelectorAll('.firstSlider__item')
-const firstPrev = document.querySelector('.firstSlider__btn--prev');
-const firstNext = document.querySelector('.firstSlider__btn--next');
+// function sendFormValue(event) {
+//     event.preventDefault();
+//     const {name, age , people , plan } = form;
 
+//     const values = {
+//         name: name.value,
+//         age: age.value,
+//         people: people.checked,
+//         plan: plan.value,
+//     }
+//     console.log(values);
+// }
 
+// form.addEventListener('submit', sendFormValue);
 
-function sliderMoveNext(item, prev, next) {
-    function delClass() {
-        for (i = 0; i < item.length; i++) {
-            item[i].classList.remove('firstSlider__item--prev')
-            item[i].classList.remove('firstSlider__item--active')
-            item[i].classList.remove('firstSlider__item--next')
+// ------------
+// const {form} = document.forms;
+// const ifCheckOrRadio = type => ['checkbox' , 'radio'].includes(type)
+
+// function sendFormValue(event) {
+//     event.preventDefault();
+//     const {elements} = form;
+//     const values = {};
+//     for (let i = 0; i < elements.length; i++) {
+//         const formElement = elements[i];
+//         const {name} = formElement;
+//         if(name) { 
+//             const {value , type, checked} = formElement;
+//             values[name] = ifCheckOrRadio(type)?checked : value; 
+//         }
+//     }
+//     console.log(values);
+// }
+    
+// form.addEventListener('submit', sendFormValue);
+
+// -----------------------------------такое
+
+// const {form} = document.forms;
+
+// function sendFormValue(event) {
+//     event.preventDefault()
+
+//     const formData = new FormData(form);
+//     const values = Object.fromEntries(formData.entries());
+//     console.log(values) 
+// }
+
+// form.addEventListener('submit', sendFormValue);
+
+// ----------------------------------
+
+const {form} = document.forms;
+const ifCheckOrRadio = type => ['checkbox' , 'radio'].includes(type)
+function sendFormValue(event) {
+    event.preventDefault();
+    const values ={};
+    for (let field of form){
+        const{name} = field;
+        if(name){
+            const {type, checked, value} = field;
+            values[name] = ifCheckOrRadio(type)? checked : value;
         }
     }
-    let nextStep = 0;
-    let activeStep = 1;
-    let prevStep = 2;
-    next.onclick = () => {
-        prevStep++;
-        activeStep++;
-        nextStep++;
-        if (prevStep === item.length) {
-            prevStep = 0;
-        } else if (activeStep === item.length) {
-            activeStep = 0;
-        } else if (nextStep === item.length) {
-            nextStep = 0;
-        }
-        console.log(prevStep, activeStep, nextStep)
-        delClass();
-        item[prevStep].classList.add('firstSlider__item--next')
-        item[activeStep].classList.add('firstSlider__item--active')
-        item[nextStep].classList.add('firstSlider__item--prev')
-    }
-    prev.onclick = () => {
-        delClass();
-        prevStep--;
-        activeStep--;
-        nextStep--;
-        if (prevStep === -1) {
-            prevStep = item.length - 1;
-        } else if (activeStep === -1) {
-            activeStep = item.length - 1;
-        } else if (nextStep === -1) {
-            nextStep = item.length - 1;
-        }
-        console.log(prevStep, activeStep, nextStep)
-        delClass();
-        item[prevStep].classList.add('firstSlider__item--next')
-        item[activeStep].classList.add('firstSlider__item--active')
-        item[nextStep].classList.add('firstSlider__item--prev')
-    }
-
-
+    console.log(values)
 }
-sliderMoveNext(firstItems, firstPrev, firstNext) 
+
+form.addEventListener('submit', sendFormValue);
